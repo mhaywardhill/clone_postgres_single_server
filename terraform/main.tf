@@ -22,8 +22,8 @@ resource "azurerm_postgresql_server" "clone" {
   restore_point_in_time 	= "2022-03-24T16:00:38.000Z"
 
   ssl_enforcement_enabled = true
-  version 			  = "11"
-  sku_name 			  = "GP_Gen5_2"
+  version 			  = data.azurerm_postgresql_server.source.version
+  sku_name 			  = data.azurerm_postgresql_server.source.sku_name
 
   public_network_access_enabled    = false
 }
