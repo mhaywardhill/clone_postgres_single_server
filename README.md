@@ -19,6 +19,8 @@ export TF_VAR_source_db="<source database>"
 export TF_VAR_source_resource_group="<source resource group>"
 
 export TF_VAR_target_db="<target database>"
+
+export TF_VAR_target_resource_group="<target resource group>"
 ```
 
 
