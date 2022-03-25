@@ -1,7 +1,9 @@
 
-## Perform Point-in-time-restore PITR for Postgres Single Server in Azure using Terraform
+## Perform PITR for Postgres Single Server in Azure using Terraform
 
-I use this project to create a clone of a Postgres server in Azure using Terraform. I execute the commands from a Linux terminal on Windows (Ubuntu on WSL).
+I use this project to perform point-in-time restore (PITR) of a Postgres server in Azure using Terraform. 
+
+I execute the commands from a Linux terminal on Windows (Ubuntu on WSL).
  
 ### Login to Azure using the CLI
 

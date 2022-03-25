@@ -18,3 +18,10 @@ variable "location" {
 variable "target_resource_group" {
   description = "Name of the target resource group"
 }
+
+
+variable "restore_point_in_time" {
+  description = "date and time of the restore"
+}
+
+

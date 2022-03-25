@@ -19,7 +19,7 @@ resource "azurerm_postgresql_server" "clone" {
 
   create_mode 			= "PointInTimeRestore"
   creation_source_server_id 	= data.azurerm_postgresql_server.source.id 
-  restore_point_in_time 	= "2022-03-24T16:00:38.000Z"
+  restore_point_in_time 	= var.restore_point_in_time
 
   ssl_enforcement_enabled = true
   version 			  = data.azurerm_postgresql_server.source.version
