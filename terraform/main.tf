@@ -26,6 +26,7 @@ resource "azurerm_postgresql_server" "clone" {
   sku_name 			  = data.azurerm_postgresql_server.source.sku_name
 
   public_network_access_enabled = false
+
 }
 
 
