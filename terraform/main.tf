@@ -1,10 +1,14 @@
-provider "azurerm" {
-  features {}
+terraform {
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "=3.0.1"
+    }
+  }
 }
 
-resource "azurerm_resource_group" "main" {
-  name     = var.target_resource_group
-  location = var.location
+provider "azurerm" {
+  features {}
 }
 
 data "azurerm_postgresql_server" "source" {
@@ -14,8 +18,8 @@ data "azurerm_postgresql_server" "source" {
 
 resource "azurerm_postgresql_server" "clone" {
   name                = var.target_db
-  location            = azurerm_resource_group.main.location
-  resource_group_name = azurerm_resource_group.main.name
+  location            = var.location
+  resource_group_name = "policy-clone"
 
   create_mode 			= "PointInTimeRestore"
   creation_source_server_id 	= data.azurerm_postgresql_server.source.id 
