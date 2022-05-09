@@ -2,14 +2,12 @@
 ## Perform PITR for Postgres Single Server in Azure using Terraform
 
 The project's goal is to perform a point-in-time restore PITR of a PostgreSQL Single Server in Azure using Terraform and test the effect of the public_network_access_enabled parameter.
-<p>&nbsp;</p>
 
 ### Issue in 3.0.1
 
 The parameter public_network_access_enabled is not valid for a PITR. Still, if specified and set to false, it will pass the Terraform validation and an Azure policy to prevent the Postgres server from being created with public access.
 
 The default behaviour for PITR is to create the Postgres server with public access enabled, and currently, this cannot be changed.
-<p>&nbsp;</p>
 
 ### Fixed in 3.4.0
 
