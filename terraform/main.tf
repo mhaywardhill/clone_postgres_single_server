@@ -19,7 +19,7 @@ data "azurerm_postgresql_server" "source" {
 resource "azurerm_postgresql_server" "clone" {
   name                = var.target_db
   location            = var.location
-  resource_group_name = "policy-clone"
+  resource_group_name = var.target_resource_group
 
   create_mode 			= "PointInTimeRestore"
   creation_source_server_id 	= data.azurerm_postgresql_server.source.id 
